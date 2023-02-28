@@ -29,7 +29,7 @@ def tableStyle(s):
     return 'Table Grid'
 
 
-def newTable(styleTable=0, condHeaderCenter=False, condTableCenter=False,):
+def newTable(styleTable=0, condHeaderCenter=False, condTableCenter=False, save=True):
     '''
     Criar e editar estilo de uma tabela fixa, essa função tem como objetivo receber 3 parametros, sendo eles:
 
@@ -82,5 +82,6 @@ def newTable(styleTable=0, condHeaderCenter=False, condTableCenter=False,):
                 # Define o alinhamento horizontal da célula como centralizado
                 cell.paragraphs[0].alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
 
-    # salvar documento
-    document.save('teste.docx')
+    if save is True:
+        # salvar documento
+        document.save('teste.docx')
